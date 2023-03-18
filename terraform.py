@@ -84,13 +84,11 @@ resource "aws_lb_target_group" "app_tg" {
   }
 }
 
-# Dodanie instancji do target group
 resource "aws_lb_target_group_attachment" "app_tg_attach" {
   target_group_arn = aws_lb_target_group.app_tg.arn
   target_id = aws_instance.app_instance.id
   port = 80
 }
 
-# Dodanie listenera do load balancera
 resource "aws_lb_listener" "app_lb_listener" {
   load_balancer
