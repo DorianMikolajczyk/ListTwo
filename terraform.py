@@ -92,3 +92,4 @@ resource "aws_lb_target_group_attachment" "app_tg_attach" {
 
 resource "aws_lb_listener" "app_lb_listener" {
   load_balancer
+}
