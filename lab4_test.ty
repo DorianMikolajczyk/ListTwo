@@ -1,0 +1,10 @@
+from locust import HttpUser, TaskSet, task, between
+
+class MyTaskSet(TaskSet):
+    @task
+    def get_data(self):
+        self.client.get("/api/data")
+
+class MyUser(HttpUser):
+    tasks = [MyTaskSet]
+    wait_time = between(5, 15) # oczekiwanie między requestami
