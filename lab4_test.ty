@@ -7,4 +7,4 @@ class MyTaskSet(TaskSet):
 
 class MyUser(HttpUser):
     tasks = [MyTaskSet]
-    wait_time = between(5, 15) # oczekiwanie między requestami
+    wait_time = between(5, 15)
